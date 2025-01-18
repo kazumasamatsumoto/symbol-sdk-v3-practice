@@ -1,12 +1,10 @@
 import { PrivateKey } from "symbol-sdk";
-import { SymbolFacade, descriptors, models } from "symbol-sdk/symbol";
+import { KeyPair } from "symbol-sdk/symbol";
 
-const facade = new SymbolFacade("testnet");
+const privateKey = new PrivateKey(
+  "EDB671EB741BD676969D8A035271D1EE5E75DF33278083D877F23615EB839FEC"
+);
+console.log(`Private Key: ${privateKey.toString()}`);
 
-// 事前準備
-
-// 新規生成
-const aliceKey = PrivateKey.random(); // newを使わない
-console.log("Alice's private key:", aliceKey);
-
-// アドレスをネットワークに紐づける
+const keyPair = new KeyPair(privateKey);
+console.log(`Public Key: ${keyPair.publicKey.toString()}`);
