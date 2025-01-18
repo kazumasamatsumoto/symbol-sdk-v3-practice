@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="800" height="600" fill="#f8f9fa"/>
+    
+    <!-- タイトル -->
+    <text x="400" y="40" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#2c3e50">
+        Symbol SDK TypeScript Module Resolution
+    </text>
+
+    <!-- エラーの状況を説明する左側のボックス -->
+    <g transform="translate(50, 100)">
+        <!-- セクションタイトル -->
+        <text x="150" y="30" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#e74c3c">
+            エラーの状況
+        </text>
+        
+        <!-- エラーの図解 -->
+        <rect x="20" y="50" width="260" height="160" rx="10" fill="#fff" stroke="#e74c3c" stroke-width="2"/>
+        
+        <!-- Node10のモジュール解決 -->
+        <text x="40" y="80" font-family="Arial" font-size="14" fill="#2c3e50">
+            moduleResolution: "node10"
+        </text>
+        
+        <!-- 矢印 -->
+        <path d="M40 100 L260 100" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrow)"/>
+        
+        <!-- エラーメッセージ -->
+        <text x="40" y="130" font-family="Arial" font-size="12" fill="#7f8c8d">
+            <tspan x="40" dy="0">Cannot find module</tspan>
+            <tspan x="40" dy="20">'symbol-sdk/symbol'</tspan>
+            <tspan x="40" dy="20">or its corresponding</tspan>
+            <tspan x="40" dy="20">type declarations</tspan>
+        </text>
+    </g>
+
+    <!-- 解決方法を説明する右側のボックス -->
+    <g transform="translate(400, 100)">
+        <!-- セクションタイトル -->
+        <text x="150" y="30" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#27ae60">
+            解決方法
+        </text>
+        
+        <!-- 解決策の図解 -->
+        <rect x="20" y="50" width="260" height="300" rx="10" fill="#fff" stroke="#27ae60" stroke-width="2"/>
+        
+        <!-- 設定変更1: tsconfig.json -->
+        <text x="40" y="80" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">
+            1. tsconfig.json
+        </text>
+        <text x="60" y="100" font-family="Arial" font-size="12" fill="#7f8c8d">
+            <tspan x="60" dy="0">module: "Node16"</tspan>
+            <tspan x="60" dy="20">moduleResolution: "node16"</tspan>
+        </text>
+        
+        <!-- 設定変更2: package.json -->
+        <text x="40" y="160" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">
+            2. package.json
+        </text>
+        <text x="60" y="180" font-family="Arial" font-size="12" fill="#7f8c8d">
+            <tspan x="60" dy="0">type: "module"</tspan>
+        </text>
+        
+        <!-- 設定変更3: ts-node -->
+        <text x="40" y="220" font-family="Arial" font-size="14" font-weight="bold" fill="#2c3e50">
+            3. ts-node
+        </text>
+        <text x="60" y="240" font-family="Arial" font-size="12" fill="#7f8c8d">
+            <tspan x="60" dy="0">ts-node --esm src/index.ts</tspan>
+        </text>
+
+        <!-- 結果 -->
+        <text x="40" y="300" font-family="Arial" font-size="14" font-weight="bold" fill="#27ae60">
+            結果
+        </text>
+        <text x="60" y="320" font-family="Arial" font-size="12" fill="#7f8c8d">
+            ✓ 型定義の正しい解決</text>
+    </g>
+
+    <!-- 矢印の定義 -->
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 L2,5 Z" fill="#e74c3c"/>
+        </marker>
+    </defs>
+
+    <!-- 下部の説明 -->
+    <g transform="translate(50, 450)">
+        <!-- 説明のタイトル -->
+        <text x="350" y="30" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#2c3e50">
+            モジュール解決の仕組み
+        </text>
+        
+        <!-- 説明テキスト -->
+        <rect x="20" y="50" width="660" height="80" rx="10" fill="#fff" stroke="#3498db" stroke-width="2"/>
+        <text x="40" y="80" font-family="Arial" font-size="12" fill="#7f8c8d">
+            <tspan x="40" dy="0">Node16のモジュール解決では、package.jsonのexportsフィールドやESモジュールの</tspan>
+            <tspan x="40" dy="20">仕様に従って型定義ファイルを探索します。symbol-sdkはESモジュールとして提供</tspan>
+            <tspan x="40" dy="20">されているため、Node16の解決方式を使用する必要があります。</tspan>
+        </text>
+    </g>
+</svg>
