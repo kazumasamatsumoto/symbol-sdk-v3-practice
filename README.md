@@ -40,7 +40,7 @@ Cannot find module 'symbol-sdk/symbol' or its corresponding type declarations.
 
 ### 設定の概要図
 
-![TypeScript Module Resolution](docs/typescript-module-resolution.svg)
+![TypeScript Module Resolution](./docs/typescript-module-resolution.svg)
 
 1. `tsconfig.json`の設定を更新：
 
@@ -73,36 +73,33 @@ Cannot find module 'symbol-sdk/symbol' or its corresponding type declarations.
 
 これらの設定により、symbol-sdk の型定義が正しく解決され、TypeScript の型チェックが正常に機能するようになります。
 
-## Symbol SDK のモジュール設計と実行時の設定について
+## Symbol SDKのモジュール設計と実行時の設定について
 
-Symbol SDK は最新の JavaScript/TypeScript のモジュールシステムを採用しており、ES モジュール（ECMAScript Modules）として実装されています。このモジュール設計により、より良い tree-shaking（未使用コードの除去）やパッケージの最適化が可能になっていますが、実行時に特別な設定が必要になります。
+Symbol SDKは最新のJavaScript/TypeScriptのモジュールシステムを採用しており、ESモジュール（ECMAScript Modules）として実装されています。このモジュール設計により、より良い tree-shaking（未使用コードの除去）やパッケージの最適化が可能になっていますが、実行時に特別な設定が必要になります。
 
-### なぜ ts-node で直接実行できないのか？
+### なぜts-nodeで直接実行できないのか？
 
-![Symbol SDK モジュール解決の仕組み](docs\module-resolution-flow.svg)
+![Symbol SDK モジュール解決の仕組み](./docs/module-resolution-flow.svg)
 
-ts-node で直接実行できない理由は、以下の要因が組み合わさっているためです：
+ts-nodeで直接実行できない理由は、以下の要因が組み合わさっているためです：
 
-1. **Symbol SDK のモジュール形式**
+1. **Symbol SDKのモジュール形式**
+   - Symbol SDKはESモジュールとして実装されています
+   - ESモジュールは`import/export`構文を使用し、静的な依存関係解析が可能
 
-   - Symbol SDK は ES モジュールとして実装されています
-   - ES モジュールは`import/export`構文を使用し、静的な依存関係解析が可能
+2. **デフォルトのts-node動作**
+   - 通常のts-nodeはCommonJS形式（`require/module.exports`）として実行します
+   - CommonJSとESモジュール間の互換性の問題により、直接的なimportが失敗します
 
-2. **デフォルトの ts-node 動作**
-
-   - 通常の ts-node は CommonJS 形式（`require/module.exports`）として実行します
-   - CommonJS と ES モジュール間の互換性の問題により、直接的な import が失敗します
-
-3. **TypeScript のモジュール解決**
-   - TypeScript のモジュール解決システムは、実行時の Node.js の動作とは異なる場合があります
+3. **TypeScriptのモジュール解決**
+   - TypeScriptのモジュール解決システムは、実行時のNode.jsの動作とは異なる場合があります
    - コンパイル時と実行時で異なるモジュール解決方式が使用されると問題が発生
 
-### なぜ--loader ts-node/esm オプションで動くのか？
+### なぜ--loader ts-node/esmオプションで動くのか？
 
 このオプションが機能する理由は以下の通りです：
 
-1. **ESM ローダーの有効化**
-
+1. **ESMローダーの有効化**
    ```json
    // package.json
    {
@@ -112,12 +109,10 @@ ts-node で直接実行できない理由は、以下の要因が組み合わさ
      }
    }
    ```
+   - `type: "module"`により、プロジェクト全体がESモジュールとして扱われます
+   - `--loader ts-node/esm`は、TypeScriptファイルをESモジュールとして正しく解釈します
 
-   - `type: "module"`により、プロジェクト全体が ES モジュールとして扱われます
-   - `--loader ts-node/esm`は、TypeScript ファイルを ES モジュールとして正しく解釈します
-
-2. **TypeScript の設定**
-
+2. **TypeScriptの設定**
    ```json
    // tsconfig.json
    {
@@ -131,13 +126,12 @@ ts-node で直接実行できない理由は、以下の要因が組み合わさ
      }
    }
    ```
-
-   - `module: "NodeNext"`により、最新の Node.js のモジュール解決方式を使用
-   - `experimentalSpecifierResolution: "node"`で、Node.js スタイルの解決を有効化
+   - `module: "NodeNext"`により、最新のNode.jsのモジュール解決方式を使用
+   - `experimentalSpecifierResolution: "node"`で、Node.jsスタイルの解決を有効化
 
 3. **実行時の動作**
-   - ts-node/esm ローダーが TypeScript ファイルを検出
-   - ES モジュールとしてトランスパイル
-   - Symbol SDK の ES モジュールとして実装された機能を正しく import
+   - ts-node/esmローダーがTypeScriptファイルを検出
+   - ESモジュールとしてトランスパイル
+   - Symbol SDKのESモジュールとして実装された機能を正しくimport
 
-この設定により、開発時の TypeScript の型チェックと実行時のモジュール解決の両方が正しく機能し、Symbol SDK を問題なく使用できるようになります。
+この設定により、開発時のTypeScriptの型チェックと実行時のモジュール解決の両方が正しく機能し、Symbol SDKを問題なく使用できるようになります。
