@@ -79,7 +79,7 @@ Symbol SDKは最新のJavaScript/TypeScriptのモジュールシステムを採�
 
 ### なぜts-nodeで直接実行できないのか？
 
-![Symbol SDK モジュール解決の仕組み](./docs/module-resolution-flow.svg)
+![Symbol SDK モジュール解決の仕組み](/docs/module-resolution-flow.svg)
 
 ts-nodeで直接実行できない理由は、以下の要因が組み合わさっているためです：
 
