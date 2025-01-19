@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+    <!-- Background -->
+    <rect width="800" height="500" fill="#f8f9fa"/>
+    
+    <!-- Title -->
+    <text x="400" y="40" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold">SymbolFacade in Symbol SDK</text>
+    
+    <!-- Facade Pattern Explanation -->
+    <g transform="translate(50, 80)">
+        <rect width="700" height="160" rx="5" fill="#e2e8f0"/>
+        <text x="20" y="30" font-family="Arial" font-size="18" font-weight="bold">Facadeパターンとは</text>
+        <text x="20" y="60" font-family="Arial" font-size="14">• 複雑なサブシステムに対してシンプルなインターフェースを提供</text>
+        <text x="20" y="85" font-family="Arial" font-size="14">• 内部実装の詳細を隠蔽し、使いやすいAPIを提供</text>
+        <text x="20" y="110" font-family="Arial" font-size="14">• 依存関係を最小限に抑え、システムの結合度を低く保つ</text>
+        <text x="20" y="135" font-family="Arial" font-size="14">• クライアントコードをシンプルに保つことが可能</text>
+    </g>
+    
+    <!-- SymbolFacade Implementation -->
+    <g transform="translate(50, 270)">
+        <rect width="700" height="200" rx="5" fill="#e2e8f0"/>
+        <text x="20" y="30" font-family="Arial" font-size="18" font-weight="bold">SymbolFacadeの役割</text>
+        
+        <!-- Boxes -->
+        <g transform="translate(20, 50)">
+            <!-- Client -->
+            <rect x="0" y="0" width="120" height="40" rx="5" fill="#4299e1"/>
+            <text x="60" y="25" text-anchor="middle" font-family="Arial" font-size="12" fill="white">Your Code</text>
+            
+            <!-- Facade -->
+            <rect x="200" y="0" width="120" height="40" rx="5" fill="#48bb78"/>
+            <text x="260" y="25" text-anchor="middle" font-family="Arial" font-size="12" fill="white">SymbolFacade</text>
+            
+            <!-- Subsystems -->
+            <rect x="400" y="-20" width="120" height="30" rx="5" fill="#ed8936"/>
+            <text x="460" y="0" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Network</text>
+            
+            <rect x="400" y="20" width="120" height="30" rx="5" fill="#ed8936"/>
+            <text x="460" y="40" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Transactions</text>
+            
+            <rect x="400" y="60" width="120" height="30" rx="5" fill="#ed8936"/>
+            <text x="460" y="80" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Cryptography</text>
+            
+            <!-- Arrows -->
+            <path d="M120,20 L200,20" stroke="#718096" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <path d="M320,20 L400,0" stroke="#718096" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <path d="M320,20 L400,35" stroke="#718096" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <path d="M320,20 L400,75" stroke="#718096" stroke-width="2" marker-end="url(#arrowhead)"/>
+        </g>
+    </g>
+
+    <!-- Arrow Marker Definition -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#718096"/>
+        </marker>
+    </defs>
+</svg>
