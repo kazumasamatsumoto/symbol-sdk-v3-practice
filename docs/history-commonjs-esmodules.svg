@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1500 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="1500" height="400" fill="#f8f9fa"/>
+    
+    <!-- タイムライン本体 -->
+    <line x1="50" y1="200" x2="1500" y2="200" stroke="#333" stroke-width="2"/>
+    
+    <!-- 2009: CommonJS提案 -->
+    <circle cx="100" cy="200" r="8" fill="#4a90e2"/>
+    <text x="100" y="160" text-anchor="middle" font-size="14">2009</text>
+    <text x="100" y="180" text-anchor="middle" font-size="12">CommonJS提案</text>
+    
+    <!-- 2010: Node.js採用 -->
+    <circle cx="300" cy="200" r="8" fill="#4a90e2"/>
+    <text x="300" y="160" text-anchor="middle" font-size="14">2010</text>
+    <text x="300" y="180" text-anchor="middle" font-size="12">Node.jsがCommonJS採用</text>
+    
+    <!-- 2013: ES Modules提案 -->
+    <circle cx="600" cy="200" r="8" fill="#50c878"/>
+    <text x="600" y="160" text-anchor="middle" font-size="14">2013</text>
+    <text x="600" y="180" text-anchor="middle" font-size="12">ES Modules提案</text>
+    
+    <!-- 2015: ES2015でES Modules仕様化 -->
+    <circle cx="900" cy="200" r="8" fill="#50c878"/>
+    <text x="900" y="160" text-anchor="middle" font-size="14">2015</text>
+    <text x="900" y="180" text-anchor="middle" font-size="12">ES2015でES Modules仕様化</text>
+    
+    <!-- 2017: Node.js ES Modules実験的サポート -->
+    <circle cx="1100" cy="200" r="8" fill="#50c878"/>
+    <text x="1100" y="160" text-anchor="middle" font-size="14">2017</text>
+    <text x="1100" y="180" text-anchor="middle" font-size="12">Node.jsで実験的サポート</text>
+    
+    <!-- 2019: Node.js ES Modules安定版 -->
+    <circle cx="1400" cy="200" r="8" fill="#50c878"/>
+    <text x="1400" y="160" text-anchor="middle" font-size="14">2019</text>
+    <text x="1400" y="180" text-anchor="middle" font-size="12">Node.jsで安定版サポート</text>
+    
+    <!-- 凡例 -->
+    <circle cx="50" cy="350" r="8" fill="#4a90e2"/>
+    <text x="70" y="355" font-size="12">CommonJS関連</text>
+    <circle cx="200" cy="350" r="8" fill="#50c878"/>
+    <text x="220" y="355" font-size="12">ES Modules関連</text>
+</svg>

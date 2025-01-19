@@ -1,0 +1,90 @@
+<svg viewBox="0 0 1000 1200" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="1000" height="1200" fill="#f8f9fa"/>
+    
+    <!-- タイトル -->
+    <text x="500" y="40" text-anchor="middle" font-size="24" font-weight="bold">JavaScriptモジュールシステムの進化と仕組み</text>
+
+    <!-- 1. 歴史的背景セクション -->
+    <rect x="50" y="70" width="900" height="300" fill="#e3f2fd" rx="10"/>
+    <text x="500" y="100" text-anchor="middle" font-size="20" font-weight="bold">1. 歴史的背景と課題</text>
+    
+    <!-- タイムライン -->
+    <line x1="100" y1="150" x2="900" y2="150" stroke="#2196f3" stroke-width="2"/>
+    
+    <!-- イベントポイント -->
+    <circle cx="200" cy="150" r="8" fill="#1565c0"/>
+    <text x="200" y="180" text-anchor="middle" font-size="14">2009: CommonJS提案</text>
+    <text x="200" y="200" text-anchor="middle" font-size="12" fill="#555">背景：Node.js登場</text>
+    <text x="200" y="220" text-anchor="middle" font-size="12" fill="#555">サーバーサイドJSの需要</text>
+    
+    <circle cx="400" cy="150" r="8" fill="#1565c0"/>
+    <text x="400" y="180" text-anchor="middle" font-size="14">2015: ES Modules仕様化</text>
+    <text x="400" y="200" text-anchor="middle" font-size="12" fill="#555">背景：ECMAScript標準化</text>
+    <text x="400" y="220" text-anchor="middle" font-size="12" fill="#555">ブラウザ対応の需要</text>
+    
+    <circle cx="600" cy="150" r="8" fill="#1565c0"/>
+    <text x="600" y="180" text-anchor="middle" font-size="14">2019: Node.js ESM対応</text>
+    <text x="600" y="200" text-anchor="middle" font-size="12" fill="#555">背景：統一的なモジュール</text>
+    <text x="600" y="220" text-anchor="middle" font-size="12" fill="#555">システムへの要求</text>
+    
+    <circle cx="800" cy="150" r="8" fill="#1565c0"/>
+    <text x="800" y="180" text-anchor="middle" font-size="14">現在：デュアルサポート</text>
+    <text x="800" y="200" text-anchor="middle" font-size="12" fill="#555">背景：互換性維持と</text>
+    <text x="800" y="220" text-anchor="middle" font-size="12" fill="#555">モダン化の両立</text>
+
+    <!-- 説明テキスト -->
+    <text x="100" y="280" font-size="14" fill="#333">なぜ2つの規格が存在するのか：</text>
+    <text x="120" y="310" font-size="12" fill="#555">1. 異なる実行環境（ブラウザ/サーバー）の要件の違い</text>
+    <text x="120" y="330" font-size="12" fill="#555">2. 非同期読み込みと静的解析の重要性の認識</text>
+    <text x="120" y="350" font-size="12" fill="#555">3. エコシステムの発展と標準化の必要性</text>
+
+    <!-- 2. 実行時の方法セクション -->
+    <rect x="50" y="400" width="900" height="400" fill="#e8f5e9" rx="10"/>
+    <text x="500" y="430" text-anchor="middle" font-size="20" font-weight="bold">2. 実行時の方法と違い</text>
+    
+    <!-- CommonJS実行フロー -->
+    <rect x="100" y="460" width="350" height="320" fill="#c8e6c9" rx="5"/>
+    <text x="275" y="490" text-anchor="middle" font-size="16" font-weight="bold">CommonJS実行フロー</text>
+    
+    <text x="120" y="520" font-size="14">1. 同期的な読み込み</text>
+    <text x="140" y="540" font-size="12" fill="#555">→ require()での即時読み込み</text>
+    
+    <text x="120" y="570" font-size="14">2. 実行時評価</text>
+    <text x="140" y="590" font-size="12" fill="#555">→ 動的な依存解決</text>
+    
+    <text x="120" y="620" font-size="14">3. メモリ管理</text>
+    <text x="140" y="640" font-size="12" fill="#555">→ モジュールキャッシュの即時作成</text>
+    
+    <!-- ES Modules実行フロー -->
+    <rect x="550" y="460" width="350" height="320" fill="#c8e6c9" rx="5"/>
+    <text x="725" y="490" text-anchor="middle" font-size="16" font-weight="bold">ES Modules実行フロー</text>
+    
+    <text x="570" y="520" font-size="14">1. 静的解析</text>
+    <text x="590" y="540" font-size="12" fill="#555">→ import文の事前解析</text>
+    
+    <text x="570" y="570" font-size="14">2. 依存グラフ構築</text>
+    <text x="590" y="590" font-size="12" fill="#555">→ モジュール間の関係を把握</text>
+    
+    <text x="570" y="620" font-size="14">3. 段階的な評価</text>
+    <text x="590" y="640" font-size="12" fill="#555">→ 構文解析→インスタンス化→評価</text>
+
+    <!-- 3. 対応策セクション -->
+    <rect x="50" y="830" width="900" height="340" fill="#fff3e0" rx="10"/>
+    <text x="500" y="860" text-anchor="middle" font-size="20" font-weight="bold">3. 実践的な対応策</text>
+    
+    <!-- 対応策の説明 -->
+    <rect x="100" y="890" width="800" height="260" fill="#ffe0b2" rx="5"/>
+    
+    <text x="120" y="920" font-size="16" font-weight="bold">ファイル拡張子による対応</text>
+    <text x="140" y="945" font-size="12" fill="#555">.mjs: ES Modules専用</text>
+    <text x="140" y="965" font-size="12" fill="#555">.cjs: CommonJS専用</text>
+    
+    <text x="120" y="1000" font-size="16" font-weight="bold">package.jsonでの設定</text>
+    <text x="140" y="1025" font-size="12" fill="#555">"type": "module" // ESM指定</text>
+    <text x="140" y="1045" font-size="12" fill="#555">"exports": デュアルパッケージ対応</text>
+    
+    <text x="120" y="1080" font-size="16" font-weight="bold">実行時の互換性確保</text>
+    <text x="140" y="1105" font-size="12" fill="#555">動的import()の使用</text>
+    <text x="140" y="1125" font-size="12" fill="#555">ビルドツールでの変換対応</text>
+</svg>
