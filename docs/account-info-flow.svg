@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="white"/>
+    
+    <!-- Types Group -->
+    <g transform="translate(50,50)">
+        <rect x="0" y="0" width="200" height="150" rx="10" fill="#e6e6ff" stroke="#333" stroke-width="2"/>
+        <text x="100" y="35" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">型定義 (types.ts)</text>
+        <text x="20" y="70" font-family="Arial" font-size="14">• AccountInfo interface</text>
+        <text x="20" y="100" font-family="Arial" font-size="14">• MosaicInfo interface</text>
+        <text x="20" y="130" font-family="Arial" font-size="14">• ApiError class</text>
+    </g>
+
+    <!-- Functions Group - Centered and Expanded -->
+    <g transform="translate(300,50)">
+        <rect x="0" y="0" width="400" height="450" rx="10" fill="#ffe6ff" stroke="#333" stroke-width="2"/>
+        <text x="200" y="35" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">関数 (CheckAccountInfo.ts)</text>
+        
+        <!-- Functions with more spacing -->
+        <g transform="translate(50,60)">
+            <!-- Main Function -->
+            <rect x="0" y="0" width="300" height="60" rx="5" fill="white" stroke="#333"/>
+            <text x="150" y="35" text-anchor="middle" font-family="Arial" font-size="14">メイン処理</text>
+            
+            <!-- getAccountMosaicAmount -->
+            <rect x="0" y="100" width="300" height="60" rx="5" fill="white" stroke="#333"/>
+            <text x="150" y="135" text-anchor="middle" font-family="Arial" font-size="14">getAccountMosaicAmount</text>
+            
+            <!-- fetchData -->
+            <rect x="0" y="200" width="300" height="60" rx="5" fill="white" stroke="#333"/>
+            <text x="150" y="235" text-anchor="middle" font-family="Arial" font-size="14">fetchData＜T＞</text>
+            
+            <!-- formatAmount -->
+            <rect x="0" y="300" width="300" height="60" rx="5" fill="white" stroke="#333"/>
+            <text x="150" y="335" text-anchor="middle" font-family="Arial" font-size="14">formatAmount</text>
+        </g>
+    </g>
+
+    <!-- External Dependencies -->
+    <g transform="translate(750,50)">
+        <rect x="0" y="0" width="200" height="150" rx="10" fill="#e6ffe6" stroke="#333" stroke-width="2"/>
+        <text x="100" y="35" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">外部依存</text>
+        <text x="20" y="70" font-family="Arial" font-size="14">• Symbol Node</text>
+        <text x="20" y="100" font-family="Arial" font-size="14">• アドレス設定</text>
+    </g>
+
+    <!-- Data Flow Arrows - Now connecting to box edges -->
+    <!-- Main to getAccountMosaicAmount -->
+    <path d="M 500,170 L 500,210" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- getAccountMosaicAmount to fetchData -->
+    <path d="M 500,270 L 500,310" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- fetchData to Symbol Node -->
+    <path d="M 700,280 L 750,125" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- getAccountMosaicAmount to formatAmount -->
+    <path d="M 500,370 L 500,410" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+    <!-- Type Dependencies - Single line for shared dependencies -->
+    <path d="M 350,280 L 250,125" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+
+    <!-- Error Handling - Single line for error handling -->
+    <path d="M 350,280 L 250,125" stroke="#f00" stroke-width="2" stroke-dasharray="5,5"/>
+
+    <!-- Arrow Marker Definition -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+        </marker>
+    </defs>
+
+    <!-- Legend -->
+    <g transform="translate(50,520)">
+        <rect x="0" y="0" width="20" height="20" fill="#ffe6ff"/>
+        <text x="30" y="15" font-family="Arial" font-size="14">関数</text>
+        
+        <rect x="150" y="0" width="20" height="20" fill="#e6e6ff"/>
+        <text x="180" y="15" font-family="Arial" font-size="14">型定義</text>
+        
+        <rect x="300" y="0" width="20" height="20" fill="#e6ffe6"/>
+        <text x="330" y="15" font-family="Arial" font-size="14">外部依存</text>
+        
+        <line x1="450" y1="10" x2="480" y2="10" stroke="#333" stroke-width="2"/>
+        <text x="490" y="15" font-family="Arial" font-size="14">データフロー</text>
+        
+        <line x1="600" y1="10" x2="630" y2="10" stroke="#f00" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="650" y="15" font-family="Arial" font-size="14">エラーハンドリング,型の依存関係</text>
+    </g>
+</svg>

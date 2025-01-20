@@ -1,49 +1,6 @@
 # CheckAccountInfo.ts の設計と関係性
 
-```mermaid
-
-graph TD
-    subgraph "型定義 (types.ts)"
-        AccountInfo[AccountInfo interface]
-        MosaicInfo[MosaicInfo interface]
-        ApiError[ApiError class]
-    end
-
-    subgraph "関数 (CheckAccountInfo.ts)"
-        main[メイン処理]
-        getAccountMosaicAmount[getAccountMosaicAmount]
-        fetchData[fetchData<T>]
-        formatAmount[formatAmount]
-    end
-
-    subgraph "外部依存"
-        NODE[Symbol Node]
-        aliceAddress[アドレス設定]
-    end
-
-    %% データフロー
-    main --> getAccountMosaicAmount
-    getAccountMosaicAmount --> fetchData
-    fetchData --> NODE
-    getAccountMosaicAmount --> formatAmount
-
-    %% 型の依存関係
-    fetchData -.-> AccountInfo
-    fetchData -.-> MosaicInfo
-    fetchData -.-> ApiError
-
-    %% エラーハンドリング
-    fetchData -.エラー処理.-> ApiError
-    getAccountMosaicAmount -.エラー処理.-> ApiError
-
-    classDef function fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef type fill:#bbf,stroke:#333,stroke-width:2px;
-    classDef external fill:#bfb,stroke:#333,stroke-width:2px;
-
-    class main,getAccountMosaicAmount,fetchData,formatAmount function;
-    class AccountInfo,MosaicInfo,ApiError type;
-    class NODE,aliceAddress external;
-```
+![Account Info Flow](account-info-flow.svg)
 
 ## 関数の役割と関係性の解説
 
