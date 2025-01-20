@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <!-- グラデーション定義 -->
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#e1f5fe;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="createGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#bbdefb;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#90caf9;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="signGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#c5cae9;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#9fa8da;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="announceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#b3e5fc;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#81d4fa;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="blockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#b2ebf2;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#80deea;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="finalizeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#c8e6c9;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#a5d6a7;stop-opacity:1" />
+        </linearGradient>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#2196F3"/>
+        </marker>
+        <marker id="rollbackArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#F44336"/>
+        </marker>
+    </defs>
+
+    <!-- 背景 -->
+    <rect width="800" height="600" fill="url(#bgGradient)"/>
+    
+    <!-- グリッド線（薄い） -->
+    <path d="M 0 100 H 800 M 0 200 H 800 M 0 300 H 800 M 0 400 H 800 M 0 500 H 800" 
+          stroke="#e3f2fd" stroke-width="1"/>
+    <path d="M 100 0 V 600 M 200 0 V 600 M 300 0 V 600 M 400 0 V 600 M 500 0 V 600 M 600 0 V 600 M 700 0 V 600" 
+          stroke="#e3f2fd" stroke-width="1"/>
+
+    <!-- メインフロー上部のボックス -->
+    <g id="top-flow">
+        <!-- トランザクション作成 -->
+        <rect x="30" y="50" width="160" height="60" rx="10" fill="url(#createGradient)" stroke="#1976D2" stroke-width="2"/>
+        <text x="40" y="85" font-size="14" fill="#1565C0" font-weight="bold">トランザクション作成</text>
+        
+        <!-- 署名 -->
+        <rect x="270" y="50" width="100" height="60" rx="10" fill="url(#signGradient)" stroke="#3F51B5" stroke-width="2"/>
+        <text x="300" y="85" font-size="14" fill="#283593" font-weight="bold">署名</text>
+        
+        <!-- アナウンス -->
+        <rect x="450" y="50" width="100" height="60" rx="10" fill="url(#announceGradient)" stroke="#0288D1" stroke-width="2"/>
+        <text x="470" y="85" font-size="14" fill="#01579B" font-weight="bold">アナウンス</text>
+
+        <!-- 上部の接続矢印 -->
+        <line x1="190" y1="80" x2="270" y2="80" stroke="#2196F3" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="370" y1="80" x2="450" y2="80" stroke="#2196F3" stroke-width="2" marker-end="url(#arrowhead)"/>
+    </g>
+
+    <!-- 未承認トランザクション領域 -->
+    <g id="unconfirmed">
+        <rect x="150" y="160" width="300" height="120" rx="10" fill="#fff" fill-opacity="0.7" stroke="#0288D1" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="160" y="185" font-size="14" fill="#01579B" font-weight="bold">未承認トランザクション</text>
+        
+        <!-- 内部のボックス -->
+        <rect x="170" y="200" width="260" height="60" rx="5" fill="#fff" stroke="#0288D1" stroke-width="1.5"/>
+        <text x="190" y="230" font-size="12" fill="#0288D1">・全ノードに伝播</text>
+        <text x="190" y="250" font-size="12" fill="#0288D1">・手数料チェック</text>
+
+        <!-- アナウンスからの接続 -->
+        <path d="M 500 110 Q 500 220 450 220" fill="none" stroke="#2196F3" stroke-width="2" marker-end="url(#arrowhead)"/>
+    </g>
+
+    <!-- ブロック -->
+    <g id="block">
+        <rect x="150" y="320" width="300" height="100" rx="10" fill="url(#blockGradient)" stroke="#00ACC1" stroke-width="2"/>
+        <text x="160" y="345" font-size="14" fill="#006064" font-weight="bold">ブロック</text>
+        <text x="170" y="375" font-size="12" fill="#00838F">約30秒毎に生成</text>
+        <text x="170" y="395" font-size="12" fill="#00838F">承認済みトランザクションを含む</text>
+
+        <!-- 未承認からの接続 -->
+        <line x1="300" y1="280" x2="300" y2="320" stroke="#2196F3" stroke-width="2" marker-end="url(#arrowhead)"/>
+        
+        <!-- ロールバックパス（修正済み） -->
+        <path d="M 150 320 C 80 320, 80 220, 150 220" fill="none" stroke="#F44336" stroke-width="2" marker-end="url(#rollbackArrow)"/>
+        <text x="60" y="280" font-size="11" fill="#D32F2F">ロールバック時</text>
+    </g>
+
+    <!-- ファイナライズ -->
+    <g id="finalize">
+        <rect x="150" y="460" width="300" height="80" rx="10" fill="url(#finalizeGradient)" stroke="#43A047" stroke-width="2"/>
+        <text x="160" y="485" font-size="14" fill="#1B5E20" font-weight="bold">ファイナライズ済みブロック</text>
+        <text x="170" y="515" font-size="12" fill="#2E7D32">投票による確定</text>
+
+        <!-- ブロックからの接続 -->
+        <line x1="300" y1="420" x2="300" y2="460" stroke="#2196F3" stroke-width="2" marker-end="url(#arrowhead)"/>
+    </g>
+
+    <!-- 注記 -->
+    <g id="notes" fill="#37474F">
+        <text x="50" y="570" font-size="11">※ロールバック時：未承認トランザクションに差し戻し</text>
+        <text x="50" y="590" font-size="11">※有効期限切れやキャッシュあふれは切り捨て</text>
+    </g>
+</svg>
