@@ -37,7 +37,7 @@ const address = facade.network.publicKeyToAddress(publicKey);
 
 ## symbol-sdk での Facade の役割
 
-![SymbolFacadeについて](/docs/facade-pattern.svg)
+![SymbolFacadeについて](/docs/designpattern/svg/facade-pattern.svg)
 
 Facade は設計パターンの 1 つで、Symbol SDK での`SymbolFacade`クラスの役割を説明しましょう。
 
