@@ -1,4 +1,4 @@
-![CommonJs vs ES Modules Comparison](/docs/commonjs-vs-esmodules.svg)
+![CommonJs vs ES Modules Comparison](/docs/esmodules/svg/commonjs-vs-esmodules.svg)
 
 この SVG では、CommonJS と ES Modules の主な違いを以下のように表現しました：
 
@@ -21,15 +21,15 @@
 
 歴史的な流れを時系列でまとめた SVG を作成します。
 
-![歴史的な背景](/docs/history-commonjs-esmodules.svg)
+![歴史的な背景](/docs/esmodules/svg/history-commonjs-esmodules.svg)
 
 次に、CommonJS が解決しようとした問題とソリューションを視覚化します。
 
-![commonjs以前の問題点と解決策](/docs/commonjs-solutions.svg)
+![commonjs以前の問題点と解決策](/docs/esmodules/svg/commonjs-solutions.svg)
 
 最後に、ES Modules が解決しようとした問題とソリューションを視覚化します。
 
-![ESModules以前の問題点と解決策](/docs/esmodules-solutions.svg)
+![ESModules以前の問題点と解決策](/docs/esmodules/svg/esmodules-solutions.svg)
 
 これらの図で示したように、CommonJS と ES Modules は、それぞれの時代における異なるニーズと課題に対応するために開発されました。CommonJS は主にサーバーサイドでのモジュール化に焦点を当てていたのに対し、ES Modules はブラウザとサーバーの両方で動作する統一的なモジュールシステムを目指しました。
 

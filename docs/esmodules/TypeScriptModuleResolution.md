@@ -10,7 +10,7 @@ Cannot find module 'symbol-sdk/symbol' or its corresponding type declarations.
 
 ### 設定の概要図
 
-![TypeScript Module Resolution](./docs/typescript-module-resolution.svg)
+![TypeScript Module Resolution](/docs/esmodules/svg/typescript-module-resolution.svg)
 
 1. `tsconfig.json`の設定を更新：
 
@@ -49,7 +49,7 @@ Symbol SDK は最新の JavaScript/TypeScript のモジュールシステムを�
 
 ### なぜ ts-node で直接実行できないのか？
 
-![Symbol SDK モジュール解決の仕組み](/docs/module-resolution-flow.svg)
+![Symbol SDK モジュール解決の仕組み](/docs/esmodules/svg/module-resolution-flow.svg)
 
 ts-node で直接実行できない理由は、以下の要因が組み合わさっているためです：
 
