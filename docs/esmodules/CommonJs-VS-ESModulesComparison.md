@@ -116,7 +116,7 @@ module.exports = { newFeature: () => {} };
 
 CommonJS と ES Modules の主な仕組みの違いを説明します。処理の流れを視覚化するとより理解しやすいと思うので、図示させていただきます。
 
-![仕組み的な違い](/docs/module-mechanism.svg)
+![仕組み的な違い](/docs/esmodules/svg/module-mechanism.svg)
 
 主な仕組みの違いは以下の通りです：
 
@@ -177,7 +177,7 @@ export const value = 123;
 
 ## まとめ
 
-![まとめ](/docs/module-comprehensive.svg)
+![まとめ](/docs/esmodules/svg/module-comprehensive.svg)
 
 この SVG では、以下の重要なポイントを視覚的に説明しています：
 
