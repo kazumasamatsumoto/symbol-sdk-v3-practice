@@ -1,6 +1,6 @@
 TSX を使用した環境構築の手順と構成を図式化します。
 
-![TSX を使用した環境構築の手順と構成を図式化](/docs/tsx-development-environment.svg)
+![TSX を使用した環境構築の手順と構成を図式化](/docs/typescript/svg/tsx-development-environment.svg)
 
 環境構築の手順は以下の通りです：
 
