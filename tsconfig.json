@@ -5,7 +5,10 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true
+    "strict": true,
+    "moduleResolution": "NodeNext", // node16からNodeNextに変更
+    "allowSyntheticDefaultImports": true, // 追加
+    "resolveJsonModule": true // 追加
   },
   "ts-node": {
     "esm": true,
