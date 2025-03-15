@@ -1,5 +1,7 @@
 import { KeyPair } from "symbol-sdk/symbol";
-import { PrivateKey } from "symbol-sdk"
+import { PrivateKey } from "symbol-sdk";
+
+console.log(KeyPair);
 
 // KeyPairのインスタンス化
 const keyPair = new KeyPair(PrivateKey.random());

@@ -1,6 +1,8 @@
 import { SymbolFacade } from "symbol-sdk/symbol";
 import { PrivateKey, PublicKey } from "symbol-sdk";
 
+console.log(SymbolFacade);
+
 /**
  * SymbolFacadeクラスの使用方法を示すサンプルコード
  *

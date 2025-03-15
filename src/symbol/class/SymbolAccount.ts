@@ -1,5 +1,7 @@
 import { SymbolAccount } from "symbol-sdk/symbol";
 
+console.log(SymbolAccount);
+
 /**
  * SymbolAccountクラスの使用例
  *

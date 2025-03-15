@@ -1,28 +1,32 @@
 // 適切なインポート方法は環境に合わせてください
-import { Network, KeyPair, SymbolFacade } from 'symbol-sdk/symbol';
-import { Hash256, PrivateKey } from 'symbol-sdk'; // ※実際のライブラリパスに合わせて修正
+import { Network, KeyPair, SymbolFacade } from "symbol-sdk/symbol";
+import { Hash256, PrivateKey } from "symbol-sdk"; // ※実際のライブラリパスに合わせて修正
+
+console.log(Network);
 
 // 16進文字列をUint8Array（32バイトの配列）に変換する関数
 function hexToUint8Array(hex: string): Uint8Array {
-    if (hex.length % 2 !== 0) {
-        throw new Error('Invalid hex string');
-    }
-    const array = new Uint8Array(hex.length / 2);
-    for (let i = 0; i < hex.length; i += 2) {
-        array[i / 2] = parseInt(hex.substring(i, i + 2), 16);
-    }
-    return array;
+  if (hex.length % 2 !== 0) {
+    throw new Error("Invalid hex string");
+  }
+  const array = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < hex.length; i += 2) {
+    array[i / 2] = parseInt(hex.substring(i, i + 2), 16);
+  }
+  return array;
 }
 
-
 // 1. 新しいNetworkインスタンスを作成
-const name = "My Symbol Network";            // ネットワーク名
-const identifier = 0x68;                      // ネットワーク識別子（例：16進数で表現）
-const epochTime = new Date('2020-03-29T00:00:00Z'); // ネットワークのエポックタイム
+const name = "My Symbol Network"; // ネットワーク名
+const identifier = 0x68; // ネットワーク識別子（例：16進数で表現）
+const epochTime = new Date("2020-03-29T00:00:00Z"); // ネットワークのエポックタイム
 // 例として、32バイト（64文字）の16進数文字列を用意する
-const generationHashSeedHex = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef";
+const generationHashSeedHex =
+  "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef";
 // Uint8Arrayに変換
-const generationHashSeed = hexToUint8Array(generationHashSeedHex) as unknown as Hash256;
+const generationHashSeed = hexToUint8Array(
+  generationHashSeedHex
+) as unknown as Hash256;
 const myNetwork = new Network(name, identifier, epochTime, generationHashSeed);
 
 console.log("Network name:", myNetwork.name);

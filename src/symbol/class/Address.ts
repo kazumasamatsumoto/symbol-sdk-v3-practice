@@ -6,6 +6,8 @@ import { Address } from "symbol-sdk/symbol";
  * このファイルはSymbol SDKのAddressクラスの基本的な使い方を示しています。
  */
 
+console.log(Address);
+
 // 文字列からアドレスを作成
 const addressFromString = new Address(
   "TDWZ55R5XEJFUTKL2FXIEKW2UTNFVNPB2VFMZZA"
