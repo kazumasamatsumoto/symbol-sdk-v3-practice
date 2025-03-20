@@ -57,3 +57,22 @@ console.log("Address from public key:", addressFromPublicKey);
 // 5. 既存のシンボルネットワーク（MAINNET, TESTNET）の利用例
 console.log("MAINNET:", Network.MAINNET.toString());
 console.log("TESTNET:", Network.TESTNET.toString());
+
+/**
+ * 実行方法:
+ *
+ * ```
+ * tsx .\src\symbol\class\Network.ts
+ * このファイルはSymbol BlockchainのSDKを使用してネットワーク関連の操作を行うサンプルコードです。主な内容は以下の通りです：
+
+1. symbol-sdkからの必要なクラスのインポート
+2. 16進文字列をUint8Arrayに変換するヘルパー関数の実装
+3. カスタムSymbolネットワークの作成（名前、識別子、エポック時間、生成ハッシュシード）
+4. 日時とネットワークタイムスタンプの相互変換の例
+5. アドレスの検証例
+6. 公開鍵からアドレスへの変換例
+7. 既存のシンボルネットワーク（MAINNET、TESTNET）の利用例
+
+このコードは、Symbol BlockchainのネットワーククラスAPIの基本的な使い方を示しており、カスタムネットワークの設定や時間変換、アドレス生成など、Symbol Blockchainアプリケーション開発に必要な基礎的な操作をデモンストレーションしています。
+
+ */

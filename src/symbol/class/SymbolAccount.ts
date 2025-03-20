@@ -142,3 +142,22 @@ async function runSymbolAccountSample() {
 runSymbolAccountSample().catch((error) => {
   console.error("エラーが発生しました:", error);
 });
+
+/**
+ * 実行方法:
+ *
+ * ```
+ * tsx .\src\symbol\class\SymbolAccount.ts
+ * このファイルは`symbol-sdk-v3`の`SymbolAccount`クラスの使用例を示すサンプルコードです。主に以下の5つの機能を紹介しています：
+
+1. `SymbolAccount`インスタンスの作成方法
+2. アドレスと公開鍵の取得方法
+3. トランザクションの署名方法
+4. メッセージの暗号化と復号化方法
+5. トランザクションのコサイン（連署）方法
+
+コードはテストネット上でSymbolブロックチェーンと対話するための基本的な操作を示しており、アカウント作成からトランザクション署名、暗号化メッセージ、連署までの一連の流れを実装しています。`SymbolFacade`、`KeyPair`、`Address`などのSymbol SDKの主要クラスを使用しています。
+
+このサンプルは開発者がSymbol SDKを使って基本的なブロックチェーン操作を実装する際の参考になるものです。
+
+ */

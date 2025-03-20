@@ -218,18 +218,15 @@ async function runNetworkTimestampSample() {
   console.log(`タイムスタンプ3: ${timestamp3.toString()}`);
   console.log(`タイムスタンプ4: ${timestamp4.toString()}`);
   console.log(
-    `タイムスタンプ3 < タイムスタンプ4: ${
-      timestamp3.timestamp < timestamp4.timestamp
+    `タイムスタンプ3 < タイムスタンプ4: ${timestamp3.timestamp < timestamp4.timestamp
     }`
   );
   console.log(
-    `タイムスタンプ3 > タイムスタンプ4: ${
-      timestamp3.timestamp > timestamp4.timestamp
+    `タイムスタンプ3 > タイムスタンプ4: ${timestamp3.timestamp > timestamp4.timestamp
     }`
   );
   console.log(
-    `タイムスタンプ3 === タイムスタンプ4: ${
-      timestamp3.timestamp === timestamp4.timestamp
+    `タイムスタンプ3 === タイムスタンプ4: ${timestamp3.timestamp === timestamp4.timestamp
     }`
   );
 }
@@ -238,3 +235,21 @@ async function runNetworkTimestampSample() {
 runNetworkTimestampSample().catch((err) => {
   console.error("エラーが発生しました:", err);
 });
+
+/**
+ * 実行方法:
+ *
+ * ```
+ * tsx .\src\symbol\class\NetworkTimestamp.ts
+ * このファイルはSymbol Blockchainの`NetworkTimestamp`クラスの使用例を示すサンプルコードです。主な内容は以下の通りです：
+
+1. `NetworkTimestamp`クラスの基本的なインスタンス作成方法
+2. `Network`クラスとの連携による日時とネットワークタイムスタンプの相互変換
+3. タイムスタンプに時間・分・秒・ミリ秒を追加する操作
+4. エポックタイムスタンプの確認方法
+5. SymbolのMAINNETとTESTNETネットワークの使用例
+6. タイムスタンプ間の比較方法
+
+このサンプルコードは`symbol-sdk`を使用して、Symbol Blockchainで時間を扱う方法を実践的に解説しています。カスタムネットワークの作成方法も含まれており、ブロックチェーンアプリケーションの開発において時間管理を行う際の参考となります。
+
+ */

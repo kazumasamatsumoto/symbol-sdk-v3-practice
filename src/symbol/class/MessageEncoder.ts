@@ -32,3 +32,22 @@ const tryDecodeResult = messageEncoder.tryDecode(
   encodedMessage
 );
 console.log("Try Decode Result:", tryDecodeResult);
+
+/**
+ * 実行方法:
+ *
+ * ```
+ * tsx .\src\symbol\class\MessageEncoder.ts
+ * 
+ * このファイルは、Symbol ブロックチェーンでのメッセージ暗号化と復号化を示すサンプルコードです。
+
+主な内容:
+- Symbol SDK から `MessageEncoder` と `KeyPair` クラスをインポート
+- ランダムな秘密鍵から `KeyPair` を生成
+- `MessageEncoder` インスタンスを作成して公開鍵を出力
+- 「こんにちは、メッセージ暗号化テスト！」というテキストを暗号化
+- 暗号化されたメッセージを復号化
+
+このコードでは、メッセージの送信者と受信者が同じ（テスト用）ですが、実際のユースケースでは異なる公開鍵を使用します。`MessageEncoder` クラスを使えば、Symbol ブロックチェーン上で安全にメッセージをやり取りできます。
+
+ */

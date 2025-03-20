@@ -240,3 +240,20 @@ runSymbolFacadeSample().catch(console.error);
 
 // エクスポート（必要に応じて）
 export { runSymbolFacadeSample };
+
+/**
+ * 実行方法:
+ *
+ * ```
+ * tsx .\src\symbol\class\SymbolFacade.ts
+ * このファイルはSymbol Blockchainと連携するためのSymbolFacadeクラスの使用方法を示すサンプルコードです。主な機能は以下です：
+
+1. SymbolFacadeの初期化 - テストネットでの接続設定
+2. アカウント操作 - 秘密鍵の生成、アドレス作成
+3. トランザクション処理 - 転送トランザクションの作成、署名、検証
+4. 署名関連機能 - 署名作成、署名検証、連署機能
+5. その他の機能 - タイムスタンプ取得、BIP32パス生成、共有キー導出
+
+コードはSymbol SDKのV3バージョンを使用し、「runSymbolFacadeSample()」関数にこれらの機能のデモが含まれています。トランザクション作成、署名検証、ハッシュ計算など、Symbol Blockchainの基本的な操作方法が示されています。
+
+ */
