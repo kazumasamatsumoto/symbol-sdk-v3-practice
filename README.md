@@ -7,3 +7,7 @@
 これからやること
 
 クラス、関数単位での使い方の実装
+
+generateMosaicAliasIdの関数の使用例をgenerateMosaicAliasId.tsに記載してください。
+
+定義はこちらです。
