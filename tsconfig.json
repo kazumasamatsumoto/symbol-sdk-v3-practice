@@ -8,7 +8,10 @@
     "strict": true,
     "moduleResolution": "NodeNext", // node16からNodeNextに変更
     "allowSyntheticDefaultImports": true, // 追加
-    "resolveJsonModule": true // 追加
+    "resolveJsonModule": true, // 追加
+    "paths": {
+      "symbol-sdk/*": ["./node_modules/symbol-sdk/*"]
+    }
   },
   "ts-node": {
     "esm": true,
